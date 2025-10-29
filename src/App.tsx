@@ -61,7 +61,7 @@ function App() {
   const [currentExercise, setCurrentExercise] = useState(0)
   const [html, setHtml, deleteHtml] = useKV<string>(`html-${exercises[currentExercise].id}`, exercises[currentExercise].initialHtml)
   const [css, setCss, deleteCss] = useKV<string>(`css-${exercises[currentExercise].id}`, exercises[currentExercise].initialCss)
-  const [completed, setCompleted] = useKV<Set<string>>('completed-exercises', new Set())
+  const [completed, setCompleted] = useKV<string[]>('completed-exercises', [])
 
   const exercise = exercises[currentExercise]
 
@@ -80,9 +80,10 @@ function App() {
 
   const handleMarkComplete = () => {
     setCompleted((current) => {
-      const newSet = new Set(current)
-      newSet.add(exercise.id)
-      return newSet
+      if (!current?.includes(exercise.id)) {
+        return [...(current || []), exercise.id]
+      }
+      return current
     })
     toast.success('Esercizio completato! 🎉')
   }
@@ -135,7 +136,7 @@ function App() {
                 className="relative"
               >
                 Esercizio {idx + 1}
-                {completed?.has(ex.id) && (
+                {completed?.includes(ex.id) && (
                   <CheckCircle
                     size={14}
                     weight="fill"
