@@ -54,6 +54,33 @@ const exercises: Exercise[] = [
     initialCss: '.card {\n  \n}',
     goal: 'Aggiungi border (2px solid #ddd), border-radius (15px), box-shadow (0 4px 10px rgba(0,0,0,0.1)), padding (20px)',
     concepts: ['border', 'box-shadow', 'rgba colors']
+  },
+  {
+    id: 'ex-5',
+    title: 'Il tuo primo form',
+    description: 'Crea un form base con input e button.',
+    initialHtml: '<form class="form">\n  <label class="label">Nome:</label>\n  <input type="text" class="input" placeholder="Inserisci il tuo nome">\n  <button type="submit" class="button">Invia</button>\n</form>',
+    initialCss: '.form {\n  \n}\n\n.label {\n  \n}\n\n.input {\n  \n}\n\n.button {\n  \n}',
+    goal: 'Stilizza il form con display: flex, flex-direction: column, gap (10px), max-width (300px). Aggiungi padding agli input e stile al button',
+    concepts: ['form', 'input', 'button', 'flex-direction', 'gap']
+  },
+  {
+    id: 'ex-6',
+    title: 'Form con stili avanzati',
+    description: 'Migliora il form con focus states e hover effects.',
+    initialHtml: '<form class="form">\n  <input type="email" class="input" placeholder="Email">\n  <textarea class="textarea" placeholder="Messaggio"></textarea>\n  <button class="submit-btn">Invia messaggio</button>\n</form>',
+    initialCss: '.form {\n  \n}\n\n.input, .textarea {\n  \n}\n\n.input:focus, .textarea:focus {\n  \n}\n\n.submit-btn {\n  \n}\n\n.submit-btn:hover {\n  \n}',
+    goal: 'Aggiungi border, padding, border-radius agli input. Usa :focus per outline blu. Il button deve avere background-color, color bianco, padding, e :hover effect',
+    concepts: ['input styling', 'focus states', 'hover effects', 'textarea']
+  },
+  {
+    id: 'ex-7',
+    title: 'Form completo stilizzato',
+    description: 'Crea un form di registrazione con tutti gli elementi.',
+    initialHtml: '<div class="form-container">\n  <h2 class="form-title">Registrazione</h2>\n  <form class="register-form">\n    <div class="form-group">\n      <label>Username</label>\n      <input type="text" placeholder="Scegli un username">\n    </div>\n    <div class="form-group">\n      <label>Password</label>\n      <input type="password" placeholder="Scegli una password">\n    </div>\n    <button type="submit">Registrati</button>\n  </form>\n</div>',
+    initialCss: '.form-container {\n  \n}\n\n.form-title {\n  \n}\n\n.register-form {\n  \n}\n\n.form-group {\n  \n}\n\n.form-group label {\n  \n}\n\n.form-group input {\n  \n}\n\nbutton {\n  \n}',
+    goal: 'Crea un form elegante: container con max-width (400px), padding, background-color, border-radius, box-shadow. Label con display: block, margin-bottom. Input con width: 100%, padding, border',
+    concepts: ['form layout', 'form-group pattern', 'label styling', 'complete form design']
   }
 ]
 
