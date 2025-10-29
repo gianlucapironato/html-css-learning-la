@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useKV } from '@github/spark/hooks'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -86,9 +86,24 @@ const exercises: Exercise[] = [
 
 function App() {
   const [currentExercise, setCurrentExercise] = useState(0)
+  const [userId, setUserId] = useState<number | null>(null)
   const [html, setHtml, deleteHtml] = useKV<string>(`html-${exercises[currentExercise].id}`, exercises[currentExercise].initialHtml)
   const [css, setCss, deleteCss] = useKV<string>(`css-${exercises[currentExercise].id}`, exercises[currentExercise].initialCss)
-  const [completed, setCompleted] = useKV<string[]>('completed-exercises', [])
+  const [completed, setCompleted] = useKV<string[]>(userId ? `completed-exercises-${userId}` : 'completed-exercises-temp', [])
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const user = await window.spark.user()
+        if (user) {
+          setUserId(user.id)
+        }
+      } catch (error) {
+        console.error('Failed to fetch user:', error)
+      }
+    }
+    fetchUser()
+  }, [])
 
   const exercise = exercises[currentExercise]
 
