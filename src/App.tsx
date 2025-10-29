@@ -21,36 +21,36 @@ interface Exercise {
 const exercises: Exercise[] = [
   {
     id: 'ex-1',
-    title: 'Il Tuo Primo Box Colorato',
+    title: 'Il tuo primo box colorato',
     description: 'Crea un semplice box con un colore di sfondo.',
-    initialHtml: '<div class="box">\n  Ciao Mondo!\n</div>',
+    initialHtml: '<div class="box">\n  Ciao mondo!\n</div>',
     initialCss: '.box {\n  \n}',
     goal: 'Aggiungi le proprietà CSS: background-color, padding (20px), e border-radius (10px)',
     concepts: ['background-color', 'padding', 'border-radius']
   },
   {
     id: 'ex-2',
-    title: 'Testo Stilizzato',
+    title: 'Testo stilizzato',
     description: 'Impara a dare stile al testo con CSS.',
-    initialHtml: '<div class="container">\n  <h1 class="title">Il Mio Titolo</h1>\n  <p class="text">Questo è un paragrafo di esempio.</p>\n</div>',
+    initialHtml: '<div class="container">\n  <h1 class="title">Il mio titolo</h1>\n  <p class="text">Questo è un paragrafo di esempio.</p>\n</div>',
     initialCss: '.title {\n  \n}\n\n.text {\n  \n}',
     goal: 'Stilizza il titolo con color, font-size (32px), font-weight (bold). Stilizza il testo con color, font-size (16px), line-height (1.6)',
     concepts: ['color', 'font-size', 'font-weight', 'line-height']
   },
   {
     id: 'ex-3',
-    title: 'Centrare gli Elementi',
+    title: 'Centrare gli elementi',
     description: 'Impara a centrare un elemento nella pagina.',
-    initialHtml: '<div class="container">\n  <div class="centered-box">\n    Sono Centrato!\n  </div>\n</div>',
+    initialHtml: '<div class="container">\n  <div class="centered-box">\n    Sono centrato!\n  </div>\n</div>',
     initialCss: '.container {\n  \n}\n\n.centered-box {\n  \n}',
     goal: 'Usa flexbox: nel container imposta display: flex, justify-content: center, align-items: center, min-height: 200px. Nel box aggiungi padding e background-color',
     concepts: ['display', 'flexbox', 'justify-content', 'align-items']
   },
   {
     id: 'ex-4',
-    title: 'Bordi e Ombre',
+    title: 'Bordi e ombre',
     description: 'Aggiungi profondità con bordi e ombre.',
-    initialHtml: '<div class="card">\n  <h3>Card Elegante</h3>\n  <p>Con bordi e ombre.</p>\n</div>',
+    initialHtml: '<div class="card">\n  <h3>Card elegante</h3>\n  <p>Con bordi e ombre.</p>\n</div>',
     initialCss: '.card {\n  \n}',
     goal: 'Aggiungi border (2px solid #ddd), border-radius (15px), box-shadow (0 4px 10px rgba(0,0,0,0.1)), padding (20px)',
     concepts: ['border', 'box-shadow', 'rgba colors']
@@ -135,7 +135,7 @@ function App() {
                 size="sm"
                 className="relative"
               >
-                Esercizio {idx + 1}
+                esercizio {idx + 1}
                 {completed?.includes(ex.id) && (
                   <CheckCircle
                     size={14}
@@ -173,7 +173,7 @@ function App() {
           <div className="flex gap-2">
             <Button onClick={handleMarkComplete} className="gap-2 bg-accent hover:bg-accent/90">
               <CheckCircle size={18} />
-              Segna come Completato
+              Segna come completato
             </Button>
           </div>
         </Card>
@@ -212,7 +212,7 @@ function App() {
           <Card className="p-6 space-y-4 bg-card lg:sticky lg:top-8 lg:self-start">
             <div className="flex items-center gap-2 text-foreground">
               <Eye size={24} weight="bold" />
-              <h3 className="text-lg font-semibold">Anteprima Live</h3>
+              <h3 className="text-lg font-semibold">Anteprima live</h3>
             </div>
             <div className="border-2 border-border rounded-lg overflow-hidden bg-white min-h-[500px]">
               <iframe
